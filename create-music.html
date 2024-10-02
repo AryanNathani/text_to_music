@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Music - Text to Music Generation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<script src="script.js"></script>
+<body>
+
+    <div class="container">
+        <h1>Create Your Music</h1>
+        <form id="music-form">
+            <label for="musicPrompt">Describe the type of music you want:</label>
+            <textarea id="musicPrompt" name="musicPrompt" rows="5" placeholder="Enter your music description here (e.g., genre, mood, instruments)"></textarea>
+            <button type="submit">Generate Music</button>
+        </form>
+
+        <div class="nav">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("music-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const musicPrompt = document.getElementById("musicPrompt").value;
+            if (musicPrompt.trim() === "") {
+                alert("Please describe the music you want to generate!");
+            } else {
+                // This is where you'd handle the prompt and pass it to your model/backend
+                console.log("User's music prompt:", musicPrompt);
+                alert("Your music will be generated based on your input: " + musicPrompt);
+                // Later, you'd pass `musicPrompt` to your backend for processing
+            }
+        });
+    </script>
+
+</body>
+</html>
